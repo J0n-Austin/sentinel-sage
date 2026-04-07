@@ -3,7 +3,7 @@
 # and so forth for the agents, api calls, tshark, etc
 
 [app]
-name = "Sentinel and Sage"
+name = "Sentinel & Sage"
 version = "0.1.0"
 debug = false
 
@@ -30,7 +30,7 @@ allowed_tools = [
 max_turns = 30
 
 [agents.pentester]
-enabled = falses
+enabled = false
 system_prompt = "prompts/pentester_system.md"
 allowed_tools = [
     "Read",

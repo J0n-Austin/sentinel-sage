@@ -1,5 +1,5 @@
 # Sentinel & Sage
-This is a repo that records my journey as I learn, design, and build a dual-agent CLI-driven security research tool with UI designed using Python's textual library.
+This is a repo that records my journey as I learn to design and build a dual-agent CLI-driven security research tool with UI designed using Python's textual library.
 
 This project is designed to be an exercise in developing my skills in security research, programming, and to dive into the world of understanding agentic solutions. I have learned how to design and build modern project infrastructure using uv and the importance of using .gitignore to secure keys and keep a repo clean of files that are unnecessary or that may contain sensitive information (user log files, settings, etc)
 
@@ -11,3 +11,15 @@ My programming experience has mostly been academic up to this point. This is my 
 ## Global deps
 - `sudo apt install tshark`
 - `sudo apt install nmap`
+- `curl -LsSf http://astral.sh/uv/install.sh | sh`
+
+## Set up
+`uv venv`
+`source .venv/bin/activate`
+`uv sync --dev` to set up using all dev deps or simply:
+`uv sync` to set up as a user
+
+## Run
+after initial uv sync:
+`source .venv/bin/activate`
+then `uv run sent-and-sage`

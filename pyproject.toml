@@ -2,11 +2,11 @@
 # package.setuptools is the most common backend
 [build-system]
 requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 # Project metadata
 [project]
-name = "sentinel-and-sage"
+name = "sent-and-sage"
 version = "0.1.0"
 description = "Dual-agent CLI tool for threat analysis and pentesting"
 readme = "README.md"
@@ -41,7 +41,7 @@ dev = [
 
 # Makes `sent-and-sage` a CLI command to entry point 
 [project.scripts]
-sent-and-sage = "sentinel_sage.cli:main"
+sent-and-sage = "sent_sage.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

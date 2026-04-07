@@ -41,7 +41,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 """
 class AppSettings(BaseModel):
-    name: str = "Sentinel and Sage"
+    name: str = "sent-and-sage"
     version: str = "0.1.0"
     debug: bool = False
 
@@ -130,17 +130,17 @@ class Config(BaseModel):
 
         return cls.model_validate(raw)
     
-    def _apply_env_overrides(raw: dict) -> dict:
-        """ override config values with env vars where set.
+def _apply_env_overrides(raw: dict) -> dict:
+    """ override config values with env vars where set.
 
-        """
+    """
 
-        log_level = os.environ.get("SENT_SAGE_LOG_LEVEL")
-        if log_level is not None:
-            raw.setdefault("logging", {})["level"] = log_level.upper()
+    log_level = os.environ.get("SENT_SAGE_LOG_LEVEL")
+    if log_level is not None:
+        raw.setdefault("logging", {})["level"] = log_level.upper()
 
-        debug = os.environ.get("SENT_SAGE_DEBUG")
-        if debug is not None:
-            raw.setdefault("app", {})["debug"] = debug.lower() in ("1", "true", "yes")
+    debug = os.environ.get("SENT_SAGE_DEBUG")
+    if debug is not None:
+        raw.setdefault("app", {})["debug"] = debug.lower() in ("1", "true", "yes")
 
-        return raw
+    return raw
