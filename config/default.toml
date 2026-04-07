@@ -1,0 +1,63 @@
+# This is the app's primary control settings where we set
+# budget caps, model selection, tool paths, and default behaviors,
+# and so forth for the agents, api calls, tshark, etc
+
+[app]
+name = "Sentinel and Sage"
+version = "0.1.0"
+debug = false
+
+[model]
+# Sonnet is fast and inexpensive; Once tool is refined and project 
+# requires stronger results, update to Opus
+primary = "claude-sonnet-4-5-20250929"
+# Falls back to Haiku if rates are limited or unavailable
+fallback = "claude-haiku-4-5-20251001"
+
+[budget]
+# The Agent SDK max_budget_usd will map directly to this value
+max_per_run_usd = 1.00
+warn_at_percent = 75
+
+[agents.analyst]
+enabled = true
+system_prompt = "prompts/analyst_system.md"
+allowed_tools = [
+    "Read",
+    "Bash",
+]
+# prevents runaway loops
+max_turns = 30
+
+[agents.pentester]
+enabled = falses
+system_prompt = "prompts/pentester_system.md"
+allowed_tools = [
+    "Read",
+    "Bash",
+    "WebSearch",
+]
+max_turns = 50
+
+[tshark]
+binary = "tshark"
+# Check your machine's interface `ip link` in case you need to change this
+default_interface = "eth0" 
+capture_timeout = 30
+output_format = "json"
+
+[paths]
+pcap_dir = "data/pcaps"
+samples_dir = "data/samples"
+wordlists_dir = "data/wordlists"
+reports_dir = "reports"
+tmp_dir = "data/tmp"
+log_dir = "logs"
+
+[virustotal]
+requests_per_minutes = 4
+daily_limit = 500
+
+[logging]
+level = "INFO"
+format = "%(asctime)s | %(name)s | %(levelname)s | %(message)s"

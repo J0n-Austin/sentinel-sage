@@ -1,0 +1,58 @@
+# --- Python ---
+# when Python imports a module, it compiles to bytecode and caches it
+# here; these are machine-specific and thus should not be committed
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+
+# --- Environment and secrets ---
+# .env holds API keys
+.env
+*.pem
+*.key
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- Testing / Coverage ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# --- Project-specific ---
+# Ensures that captures, samples, logs, etc do not end up
+# in the repo
+data/pcaps/*
+data/samples/*
+data/tmp/*
+reports/exports/*
+reports/sessions/*
+logs/*
+
+# --- Keep empty directories in git ---
+# The directories themselves are pushed to preserve the
+# hierarchy
+!data/pcaps/.gitkeep
+!data/samples/.gitkeep
+!data/tmp/.gitkeep
+!reports/exports/.gitkeep
+!reports/sessions/.gitkeep
+!logs/.gitkeep
