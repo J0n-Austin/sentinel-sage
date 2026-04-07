@@ -5,10 +5,11 @@ This project is designed to be an exercise in developing my skills in security r
 
 I used Anthropic's documentation to get a high-level understanding of Basic Multi-LLM workflows, how to write effective tools for AI agents, how to build effective agents, and Anthropic's Agent SDK overview to get quick practical experience building production agents with Claude Code. I Learned about managing Python projects using uv via realpython.com, and I used modelcontextprotocol.io to learn about MCP servers.
 
-My programming experience has mostly been academic up to this point. This is my first attempt at building anything significant beyond the classroom fundamentals. I have made an attempt to use this project as a learning opportunity in further developing my skills as a programmer. I have used Claude to help produce code when I am lost under the premise that it provide a lesson each time that I prompt it to generate a solution. 
+My programming experience has mostly been academic up to this point. This is my first attempt at building anything significant beyond the classroom fundamentals. I have made an attempt to use this project as a learning opportunity in further developing my skills as a programmer. I have used Claude to help produce code when I am either lost under the premise that it provide a lesson each time that I prompt it to generate a solution or when the efficiency outweighs the benefit of typing something mundane/simple. 
 
 
 ## Global deps
+Before building the environment, ensure that you install tshark, nmap, and uv. This has been entirely designed and built on Ubuntu 24.04.
 - `sudo apt install tshark`
 - `sudo apt install nmap`
 - `curl -LsSf http://astral.sh/uv/install.sh | sh`
