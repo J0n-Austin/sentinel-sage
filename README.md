@@ -1,6 +1,8 @@
 # Sentinel & Sage
 This is a repo that records my journey as I learn to design and build a dual-agent CLI-driven security research tool with UI designed using Python's textual library.
 
+Sentinel is a file triage agent and Sage is a pentesting agent. These names inherently distance the agentic workflow from the `human` sphere of social association, yet still feel real enough to spark imagination not only in their capacity, but to the user interacting with them.
+
 ## Overview
 This project is designed to be an exercise in developing my skills in security research, programming, and to dive into the world of understanding agentic solutions. I have learned how to design and build modern project infrastructure using uv and the importance of using .gitignore to secure keys and keep a repo clean of files that are unnecessary or that may contain sensitive information (user log files, settings, etc)
 
@@ -25,6 +27,7 @@ Before building the environment, ensure that you install tshark, nmap, and uv. T
 after initial uv sync:
 `source .venv/bin/activate`
 then `uv run sent-and-sage`
+export ANTHROPIC_API_KEY=your-key for each new terminal sesh
 
 ## Additional Goals
 - Test various prompt injection techniques to evaluate model behavior 
