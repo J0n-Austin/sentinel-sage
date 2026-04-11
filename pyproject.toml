@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 # Project metadata
 [project]
-name = "sent-and-sage"
+name = "sent-sage"
 version = "0.1.0"
 description = "Dual-agent CLI tool for threat analysis and pentesting"
 readme = "README.md"
@@ -41,7 +41,7 @@ dev = [
 
 # Makes `sent-and-sage` a CLI command to entry point 
 [project.scripts]
-sent-and-sage = "sent_sage.cli:main"
+sentinel = "sent_sage.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
